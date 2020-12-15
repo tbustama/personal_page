@@ -1,0 +1,23 @@
+<p id=”alert”><%= alert %></p>
+<h1>Login</h1>
+<%= form_tag sessions_path do |form| %>
+  <div class=”field”>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class=”field”>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <div class=”field”>
+    <%= label_tag :key %>
+    <%= password_field_tag :key %>
+  </div>
+  <div class=”actions”>
+    <%= submit_tag :login %>
+  </div>
+<% end %>
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to :logout, logout_path %>
+<% end %>

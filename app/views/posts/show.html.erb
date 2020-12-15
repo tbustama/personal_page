@@ -1,0 +1,13 @@
+<h2><%= @post.title %></h2>
+<p><%= @post.body %></p>
+<br>
+<% if current_user %>
+        <div class="row">
+                <div class="col-sm-1">
+                        <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default'%>
+                </div>
+                <div class="col-sm-1">
+                        <%= button_to "Delete", post_path(@post), method: :delete, :class => 'btn btn-danger' %>
+                </div>
+        </div>
+<% end %>
