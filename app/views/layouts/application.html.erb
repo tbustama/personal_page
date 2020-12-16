@@ -14,10 +14,10 @@
 
   <body style="margin: 0px;">
     
-    <nav class="navbar navbar-inverse" >
-      <div class="container">
+    <nav class="navbar navbar-inverse" style="min-height: 54px">
+      <div class="container" style="width: 1300px">
         <div class="navbar-header">
-          <%= link_to image_tag("house.png", width:22,height:20), home_path, class: "navbar-brand" %>
+          <%= link_to image_tag("house.png", width:22,height:22), home_path, class: "navbar-brand" %>
         </div>
         <div id="navbar">
           <ul class="nav navbar-nav">
@@ -47,7 +47,7 @@
         </div>
       </div>
     </nav>
-    <div class="container"><%= yield %></div>
+    <div class="container" style="width: 1250px"><%= yield %></div>
   </body>
   
 </html>
