@@ -1,22 +1,26 @@
 <% if current_user %>
     <h1>Add Post</h1>
-    <%= form_for :post, url: posts_path do |f|%>
+    <%= form_with model: @post, url: posts_path, local: true do |f|%>
         <% if @post.errors.any? %>
             <% @post.errors.full_messages.each do |msg|%>
                 <div class="alert alert-danger"><%= msg%></div>
             <% end %>
         <% end %>
         <p>
+            <div class="field">
             <%= f.label :title %><br>
-            <%= f.text_field :title %>
+            <%= f.text_field :title%>
+        </div>
         </p>
         <p>
-            <%= f.label :body %><br>
-            <%= f.text_area :body%>
+        <div class="field">
+            <%= f.label :content %><br>
+            <%= f.rich_text_area :content%>
+        </div>
         </p>
 
         <p>
-            <%= f.submit({:class => 'btn'})%>
+            <%= f.submit :class => 'btn' %>
         </p>
     <% end %>
 <% else %>
