@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/project' => 'projects#project', as: 'project'
   resources :posts, only: [:destroy, :update, :create, :show, :new, :edit, :index]
   resources :contacts, only: [:index]
-  resources :users
+  
   
 
 end
